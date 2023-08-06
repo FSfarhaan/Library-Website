@@ -1,1 +1,758 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui !important;
+    font-weight: bolder !important;
+}
 
+/* ------------------YE NAVBAR KI STYLING HAI--------------------- */
+.hamburger{
+    position: absolute;
+    font-size: 30px;
+    display: none;
+}
+nav .peeche{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+.search{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+.search input{
+    font-size: 15px;
+    font-weight: 400;
+}
+.search i{
+    font-size: 25px;
+    cursor: pointer;
+}
+.search input{
+    border: 1px solid black;
+    max-height: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    margin-right: 10px;
+    padding: 5px 20px;
+}
+.navbar{
+    justify-content: right;
+}
+.logo{
+    font-size: 2rem;
+    margin: 12px 0;
+    cursor: pointer;
+}
+.navbar ul{
+    list-style-type: none;
+}
+
+.navbar ul a{
+    margin: 0 12px;
+    display: inline;
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+.navbar ul a:hover{
+    color: gray;
+}
+
+/* ------------------YE HEADER KI STYLING HAI--------------------- */
+
+header{
+    height: 30rem;
+    width: 100%;
+    color: white;
+    align-items: center;
+    background-image: linear-gradient(to top, rgb(0 0 0 / 20%)0%, rgb(0 0 0 / 60%)100%) ,url(../images/bg.jpg);
+}
+header p{
+    font-weight: 500;
+}
+.dabba {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.dabba h4{
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    font-size: 5em;
+}
+
+.dabba p{
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.btn a{
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 75px;
+    margin: 20px 2px;
+}
+#act{
+    background-color: #aa5f00;
+    color: white;
+    border: 1px solid #aa5f00;
+}
+#act:hover{
+    background-color: transparent;
+    border: 1px solid white;
+}
+.btn a:hover{
+    background-color: #aa5f00;
+    border: 1px solid #aa5f00;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* ------------------YE BESTSELLIG BOOKS KI STYLING HAI--------------------- */
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 10px 0;
+}
+main .best{
+    width: 80%;
+    margin: auto;
+}
+.topper{
+    display: inlineblo;
+    margin: 0;
+}
+.heading{
+    font-size: 2rem;
+    margin: 10px 0 5px 0;
+}
+.hr{
+    background-color: #aa5f00;
+    height: 5px;
+    width: 10em;   
+    margin-bottom: 30px;
+}
+.contents{
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(150px, 2fr));
+    grid-template-rows: repeat(2, minmax(150px, 2fr));
+}
+.contents1{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 2fr));
+    grid-template-rows: repeat(4, minmax(150px, 2fr));
+}
+.box{
+    display: flex;
+    background-color: #aa60000e;
+    margin: 10px;
+    padding: 7px;
+    z-index: 1;
+}
+.toHide{
+    display: flex;
+    align-items: center;
+    background-color: rgb(239, 245, 250);
+    margin: 10px;
+    padding: 7px;
+}
+.best .box:hover{
+    box-shadow: 5px 5px 18px rgb(126, 122, 122);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.box .img{
+    margin-top: 10px;
+    height: 6rem;
+    width: 8rem;
+    margin-right: 10px;
+    background-color: gray;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.info h3{
+    margin: 0 0 3px;
+    line-height: 20px;
+}
+.author{
+    margin: 0;
+    font-size: 10px;
+    opacity: 90%;
+    font-style: italic;
+}
+.info p{
+    font-size: 10px;
+}
+#price{
+    margin: 0;
+    color: #aa5f00;
+    margin-bottom: 1px;
+}
+#showMore{
+    color: black;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 10px 0;
+    padding: 5px 20px;
+}
+#showMore:hover{
+    color: white;
+    transition: 0.3s ease;
+    border: 1px solid #aa5f00;
+    cursor: pointer;
+    background-color: #aa5f00;
+}
+.type{
+    margin: 0;
+}
+
+/* ------------------YE CATEGORIES KI STYLING HAI--------------------- */
+
+.toggleDown{
+    position: relative;
+    transform: rotate(0deg);
+}
+.toggleUp{
+    transform: rotate(180deg);
+}
+
+.categ{
+    color: white;
+    background-image: linear-gradient(to top, rgb(0 0 0 / 20%)0%, rgb(0 0 0 / 60%)100%) ,url(../images/giammarco-boscaro-OPzWvgL-upY-unsplash.jpg);;
+    width: 100%;
+    padding: 10px 0 0;
+}
+
+.inCateg{
+    width: 80%;
+    margin: auto;
+    padding: 10px 0 20px 0;
+}
+
+.categories{
+    border: 1px solid white;
+    padding: 5px 10px 5px 5px;
+    margin: 10px 0;
+}
+.categories:hover{
+    cursor: pointer;
+}
+
+#toSlide1, #toSlide2, #toSlide3, #toSlide4, #toSlide5, #toSlide6 {
+    background-color: rgba(255, 255, 255, 0.048);
+    display: grid;
+    grid-template-columns: repeat(10, minmax(10px, 2fr));
+    grid-template-rows: repeat(2, minmax(150px, 2fr));
+    padding: 20px 0 0 0px;
+    justify-items: center;
+}
+.tog{
+    display: flex;
+    align-items: center;
+}
+.tog i{
+    margin: 4px 0 0 20px;
+    font-size: 25px;
+}
+.tog h3{
+    font-size: 20px !important;
+}
+.demo{
+    background-color: gray;
+    height: 60px;
+    width: 40px;
+    margin-right: 5px;
+}
+.books{
+    /* background-color: gray; */
+    height: 7rem;
+    width: 4rem;
+}
+.books:hover{
+    box-shadow: 0 0 15px black;
+}
+
+/* ------------------YE SERVICES KI STYLING HAI--------------------- */
+
+.serv{
+    padding: 0 0 10px 0;
+}
+.services{
+    width: 80%;
+    margin: auto;
+    padding: 10px 0 0;
+}
+
+.servBox{
+    display: flex;
+    margin: 20px 0;
+    border-radius: 5px;
+    background-color: #aa60000e;
+    /* width: 80%; */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.21);
+}
+.servBoxR{
+    margin: 0 0 20px;
+}
+.servBox img{
+    font-size: 20px;
+    width: 300px;
+}
+.servInfo{
+    text-align: right;
+    margin: 10px;
+}
+.servBox h3{
+    margin: 10px 0;
+    font-size: 30px;
+}
+.servBox p{
+    font-weight: 400;
+}
+.servInfoL{
+    margin: 10px;
+}
+
+/* ------------------YE DONATION KI STYLING HAI--------------------- */
+
+.donate{
+    background-image: url(../images/andrew-neel-1-29wyvvLJA-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 50px 0;
+}
+.donBox{
+    max-width: fit-content;
+}
+.active{
+    background-color: #aa5f00;
+    border: 1px solid #aa5f00;
+}
+.optPrices button {
+    border: 1px solid white;
+    padding: 5px 20px;
+    margin-right: 10px;
+}
+
+.selPrice{
+    border: 1px solid white;
+    padding: 5px;
+    font-size: 50px;
+    margin: 10px 0;
+}
+.text{
+    display: flex;
+    align-items: center;
+}
+.text p{
+    font-size: 20px;
+    font-weight: 400;
+}
+.check{
+    font-size: 30px;
+    margin-right: 20px;
+}
+.bg-some{
+    color: white;
+}
+.enter{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #aa5f00;
+    background-color: #aa5f00;
+    padding: 10px 50px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.enter:hover{
+    cursor: pointer;
+    background-color: #9a5700;
+}
+
+/* ------------------YE CONTACTS KI STYLING HAI--------------------- */
+
+.contacts{
+    padding: 20px 0;
+}
+.mx-auto button:hover{
+    background-color: #aa5f00;
+    border: 1px solid #aa5f00;
+    color: white;
+}
+.mx-auto button{
+    color:rgb(125, 125, 123);;
+    background-color: transparent;
+    border: 1px solid rgb(191 191 189);;
+    transition: 0.2s ease;
+}
+.toBeShade{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.434);
+}
+
+/* ------------------YE FOOTER KI STYLING HAI--------------------- */
+
+.foot{
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+.circLogo{
+    height: 50px;
+    width: 50px;
+    background-color: #aa5f00;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.hori{
+    width: 2px;
+    height: 35px;
+    background-color: white;
+    margin: 0 20px;
+}
+.hori, .copy{
+    color: rgba(255, 255, 255, 0.416);
+}
+.name{
+    margin: 0;
+    padding: 0 0 5px;
+}
+#foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+.left{
+    align-items: center;
+    display: flex;
+}
+.right{
+    font-size: 20px;
+}
+.right i{
+    margin: 0 0 0 10px;
+}
+.right i:hover{
+    cursor: pointer;
+}
+
+/* ------------------YE MODAL KI STYLING HAI--------------------- */
+
+.modal{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    z-index: 2;
+}
+.modal .box {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.overlay2{
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    background-color: #aa5f00db;
+    backdrop-filter: blur(10px);
+    z-index: 5;
+}
+
+.imgs{
+    width: 25%;
+    height: 200px;
+    background-size: cover;
+    margin-right: 10px;
+}
+.infos{
+    width: 70%;
+}
+.desc{
+    font-size: 10px;
+}
+.span{
+    background-color: #aa5f00;
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 10px;
+    margin: 7px 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal h3{
+    font-size: 20px;
+}
+.modal .author{
+    font-size: 12px;
+}
+.modal .type{
+    font-weight: 300;
+    font-size: 10px;
+}
+
+.modalContent{
+    position: fixed;
+    z-index: 2;
+    width: 50%;
+    color: black;
+}
+
+#close{
+    position: absolute;
+    right: 1em;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* ------------------YE TOGGLED NAVBAR KI STYLING HAI--------------------- */
+
+.navContent{
+    position: fixed;
+    color: white;
+    z-index: 10;
+    margin: 10px;
+}
+.navContent a{
+    display: block;
+    margin: 10px;
+    font-size: 20px;
+}
+#back{
+    margin: 10px;
+    font-size: 30px;
+    width: fit-content;
+}
+
+/* ------------------YAHA SE MEDIA QUERIES KI STYLING HAI--------------------- */
+
+@media only screen and (max-width: 1100px) {
+    .navbar{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        left: 1em;
+    }
+    .search{
+        width: 70%;
+    }
+    .dabba h4 {
+        font-size: 4rem;
+    }
+    .info h3{
+        font-size: 14px;
+    }
+    .info p{
+        font-size: 10px;
+    }
+    .box .img{
+        margin-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .dabba h4{
+        font-size: 3.5rem;
+    }
+    .dabba p{
+        font-size: inherit;
+    }
+    .contents, .contents1 {
+        grid-template-columns: repeat(2, minmax(150px, 2fr));
+        grid-template-rows: repeat(2, minmax(150px, 2fr));
+    }
+    .imgs{
+        width: inherit;
+    }
+    #toSlide1, #toSlide2, #toSlide3, #toSlide4, #toSlide5, #toSlide6{
+        grid-template-columns: repeat(5, minmax(10px, 2fr));
+        grid-template-rows: repeat(4, minmax(150px, 2fr));
+    }
+    .servBox h3{
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    .servBox p{
+        font-size: 13px;
+    }
+    .optPrices button{
+        padding: 5px 8px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav .peeche{
+        display: block;
+    }
+    .search{
+        width: 100%;
+        margin-bottom: 10px
+    }
+    .search input{
+        margin: 0 5px 0 0;
+        padding: 5px 10px;
+    }
+    .search i{
+        font-size: 20px;
+    }
+    .logo{
+        font-size: 1.8rem;
+        margin: 12px 0 6px 35px;
+    }
+    .hamburger{
+        display: block;
+        left: auto;
+    }
+    header{
+        height: 25rem;
+    }
+    .dabba h4{
+        font-size: 2.4rem;
+        width: 77%;
+        line-height: 3rem;
+    }
+    .dabba p{
+        font-size: 15px;
+    }
+    .btn a{
+        font-size: 15px;
+        padding: 5px 15px;
+        margin: 5px 0;
+    }
+    .heading{
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    .topper .hr{
+        margin-bottom: 20px;
+    }
+    .box{
+        display: block;
+        margin: 0 10px 10px 0;
+    }
+    .box .img{
+        margin: 0 0 10px 5px;
+        width: auto;
+    }
+    .modalContent{
+        width: 60%;
+    }
+
+    .modal .box{
+        border-radius: 5px;
+        padding: 15px;
+    }
+    .infos{
+        width: 100%;
+    }
+    #toSlide1, #toSlide2, #toSlide3, #toSlide4, #toSlide5, #toSlide6 {
+        grid-template-columns: repeat(4, minmax(10px, 2fr));
+        grid-template-rows: repeat(4, minmax(150px, 2fr));
+    }
+    #price, .infos .span{
+        display: inline;
+    }
+    .desc{
+        margin-top: 10px;
+    }
+    .infos .span{
+        margin: 0 0 10px 5px;
+    }
+
+    .servBox {
+        display: flex;
+        flex-direction: column;
+    }
+    .servBox img{
+        width: 100%;
+    }
+    .servInfo{
+        text-align: left;
+    }
+    .servBoxR{
+        float: none;
+        margin: 0;
+        flex-direction: column-reverse;
+        text-align: left;
+    }
+    .inCateg .hr{
+        margin-bottom: 15px;
+    }
+    .services .hr{
+        margin: 0;
+    }
+    .services .heading{
+        margin-top: 10px;
+    }
+    .optPrices button{
+        margin: 0 0 5px;
+    }
+    .dabba p{
+        font-size: 20px;
+    }
+    .foot .heading{
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    .foot .hori{
+        height: 25px;
+        margin: 0 10px;
+    }
+    .foot .copy{
+        font-size: 10px;
+    }
+    .foot .right{
+        font-size: 10px;
+    }
+    .foot i{
+        margin: 0 0 0 10px;
+    }
+    .py-24{
+        padding: 0 1rem 2rem !important;
+    }
+    .toBeShade{
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.21);
+    }
+    .enter i{
+        font-size: 20px;
+    }
+    .enter p{
+        font-size: 15px;
+    }
+    .dabba p {
+        font-size: 15px;
+    }
+}
