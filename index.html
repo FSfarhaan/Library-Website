@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fs Library</title>
+
+    <!-- My CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- My JS file -->
+    <script src="script.js"></script>
+    <!-- Tailwind JS file -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <!-- Modal -->
+    <section id="modal" class="modal hidden">
+        <div class="overlay"></div>
+        <div class="modalContent">
+            <div class="box">
+                <div onclick="remBook()" id="close">&times;</div>
+                <img src="" id="image" class="imgs"></img>
+                <div class="infos">
+                    <h3 id="name">Name of the book</h3>
+                    <p id="author" class="author">Author of the book</p>
+                    <p id="type" class="type">Adventure</p>
+                    <p id="price">Price: 79$</p>
+                    <div style="color: white;" class="span"> <i class="fa fa-download"></i> Get Pdf</div>
+                    <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, necessitatibus?s Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nobis culpa aperiam quidem laudantium asperiores commodi non aspernatur, adipisci maiores amet modi minus error? Doloribus excepturi perspiciatis recusandae in odio?</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- toggled Navbar -->
+    <section id="toggledNav" class="hidden">
+        <div class="overlay2"></div>
+        <div class="navContent">
+        <div onclick="showNav()" id="back">&times;</div>
+            <ul>
+                <a onclick="showNav()" href="#">HOME</a>
+                <a onclick="showNav()" href="#main">OUR FAV</a>
+                <a onclick="showNav()" href="#categories">CATEGORIES</a>
+                <a onclick="showNav()" href="#service">SERVICES</a>
+                <a onclick="showNav()" href="#donate">DONATE</a>
+                <a onclick="showNav()" href="#contact">CONTACT</a>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="peeche">
+            <div class="hamburger">
+                <i onclick="showNav()" class="fa-solid fa-bars"></i>
+            </div>
+            <h3 class="logo">FsLibrary</h3>
+            <div class="search">
+                <input placeholder="Search through 2,345 Books" type="text">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <a href="#">HOME</a>
+                    <a href="#main">OUR FAV</a>
+                    <a href="#categories">CATEGORIES</a>
+                    <a href="#service">SERVICES</a>
+                    <a href="#donate">DONATE</a>
+                    <a href="#contact">CONTACT</a>
+                </ul>
+            </div>
+
+            
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="dabba">
+            <h4>Welcome to Fs Library!</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, et?</p>
+            <div class="btn">
+                <a href="#categories">Look for books!</a>
+                <a href="#service" id="act">Know more!</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BestSelling Books -->
+    <main id="main">
+        <div id="hide" class="best">
+            <div class="topper">
+                <h2 class="heading">Our Favourites!</h2>
+                <div class="hr"></div>
+            </div>
+
+            <!-- Ye 8 readily show hoge -->
+            <div class="contents">
+                <div onclick="showBook('alchemist', 'The Alchemist', 'Paulo Coelho', 'Adventure')" class="box">
+                    <img src="Books/alchemist.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Alchemist</h3>
+                        <p class="author">Paulo Coelho</p>
+                        <p class="type">Adventure</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('DaVinci', 'The Da Vinci Code', 'Dan Brown', 'Mystery')" class="box">
+                    <img src="Books/DaVinci.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Da Vinci Code</h3>
+                        <p class="author">Dan Brown</p>
+                        <p class="type">Mystery</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('hobbit', 'The Hobbit', 'John ronald reuel tolkien', 'Fantasy')" class="box">
+                    <img src="Books/hobbit.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Hobbit </h3>
+                        <p class="author">John ronald reuel tolkien</p>
+                        <p class="type">Fantasy</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('gatsby', 'The Great Gatsby', 'F. Scott Fitzgerald', 'Tragedy')" class="box">
+                    <img src="Books/gatsby.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Great Gatsby</h3>
+                        <p class="author">F. Scott Fitzgerald </p>
+                        <p class="type">Tragedy</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('itEnds', 'It Ends with Us', 'Colleen Hoover', 'Romance')" class="box">
+                    <img src="Books/itEnds.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>It Ends with Us</h3>
+                        <p class="author">Colleen Hoover</p>
+                        <p class="type">Romance</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('philoStone', 'Harry potter and the philosophers stone', 'J.K Rowling', 'Fantasy')" class="box">
+                    <img src="Books/philoStone.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Harry potter and the philosophers stone</h3>
+                        <p class="author">J.K Rowling</p>
+                        <p class="type">Fantasy</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('hungerGames', 'The Hunger Games', 'Suzanne Collins', 'Fantasy')" class="box">
+                    <img src="Books/hungerGames.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Hunger Games</h3>
+                        <p class="author">Suzanne Collins</p>
+                        <p class="type">Fantasy</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('verity', 'Verity', 'Colleen Hoover', 'Romance')" class="box">
+                    <img src="Books/verity.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Verity</h3>
+                        <p class="author">Colleen Hoover</p>
+                        <p class="type">Romance</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+
+            <!-- Ye 16 ko show more pe click kare to show hoge -->
+            </div>
+            <section id="toHide" class="contents1" style="display: none;">
+                <div onclick="showBook('LittlePrince', 'The Little Prince', 'Antoine de Saint-Exupéry', 'Children\’s')" class="box">
+                    <img src="Books/LittlePrince.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Little Prince</h3>
+                        <p class="author">Antoine de Saint-Exupéry</p>
+                        <p class="type">Children\’s</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('ThenThereWereNone', 'And Then There Were None', 'Agatha Christie', 'Mystery')" class="box">
+                    <img src="Books/ThenThereWereNone.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>And Then There Were None</h3>
+                        <p class="author">Agatha Christie</p>
+                        <p class="type">Mystery</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('DreamOfRed', 'Dream of the Red Chamber', 'Cao Xueqin', 'Family saga')" class="box">
+                    <img src="Books/DreamOfRed.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Dream of the Red Chamber</h3>
+                        <p class="author">Cao Xueqin</p>
+                        <p class="type">Family saga</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('TheLionWitchWardrobe', 'The Lion, the Witch and the Wardrobe', 'C. S. Lewis', 'Fantasy')" class="box">
+                    <img src="Books/TheLionWitchWardrobe.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Lion, the Witch and the Wardrobe</h3>
+                        <p class="author">C. S. Lewis</p>
+                        <p class="type">Fantasy</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('BridgesOfMadisonCounty', 'The Bridges of Madison County', 'Robert James', '')" class="box">
+                    <img src="Books/BridgesOfMadisonCounty.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Bridges of Madison County</h3>
+                        <p class="author">Robert James Waller</p>
+                        <p class="type">Romance</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('CatcherInRye', 'The Catcher in the Rye', 'J. D. Salinger', 'Coming-of-age')" class="box">
+                    <img src="Books/CatcherInRye.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Catcher in the Rye</h3>
+                        <p class="author">J. D. Salinger</p>
+                        <p class="type">Coming-of-age</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('HealYourLife', 'You Can Heal Your Life', 'Louise Hay', 'Self-help')" class="box">
+                    <img src="Books/HealYourLife.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>You Can Heal Your Life</h3>
+                        <p class="author">Louise Hay</p>
+                        <p class="type">Self-help</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('Lolita', 'Lolita', 'Vladimir Nabokov', 'Novel')" class="box">
+                    <img src="Books/Lolita.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Lolita</h3>
+                        <p class="author">Vladimir Nabokov</p>
+                        <p class="type">Novel</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('heidi', 'Heidi', 'Johanna Spyri', 'Children\'s fiction')" class="box">
+                    <img src="Books/heidi.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Heidi</h3>
+                        <p class="author">Johanna Spyri</p>
+                        <p class="type">Children's fiction</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('AnneOfGreen', 'Anne of Green Gables', 'Lucy Maud Montgomery', 'Children\'s novel')" class="box">
+                    <img src="Books/AnneOfGreen.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Anne of Green Gables</h3>
+                        <p class="author">Lucy Maud Montgomery</p>
+                        <p class="type">Children's novel</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('TheEagleHasLanded', 'The Eagle Has Landed', 'Jack Higgins', 'thriller')" class="box">
+                    <img src="Books/TheEagleHasLanded.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Eagle Has Landed</h3>
+                        <p class="author">Jack Higgins</p>
+                        <p class="type">thriller</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('Thegirlwiththedragontattoo', 'The Girl with the Dragon Tattoo', 'Stieg Larsson', 'Fiction')" class="box">
+                    <img src="Books/Thegirlwiththedragontattoo.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Girl with the Dragon Tattoo</h3>
+                        <p class="author">Stieg Larsson</p>
+                        <p class="type">Fiction</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('LostSymbol', 'The Lost Symbol', 'Dan Brown', 'Fiction')" class="box">
+                    <img src="Books/LostSymbol.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>The Lost Symbol</h3>
+                        <p class="author">Dan Brown</p>
+                        <p class="type">Fiction</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('WhoMovedMyCheese', 'Who Moved My Cheese?', 'Spencer Johnson', 'psychology')" class="box">
+                    <img src="Books/WhoMovedMyCheese.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Who Moved My Cheese?</h3>
+                        <p class="author">Spencer Johnson</p>
+                        <p class="type">psychology</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('jaws', 'Jaws', 'Peter Benchley', 'Thriller')" class="box">
+                    <img src="Books/jaws.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Jaws</h3>
+                        <p class="author">Peter Benchley</p>
+                        <p class="type">Thriller</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+                <div onclick="showBook('Dune', 'Dune', 'Frank Herbert', 'Sci-fiction')" class="box">
+                    <img src="Books/Dune.jpg" class="img"></img>
+                    <div class="info">
+                        <h3>Dune</h3>
+                        <p class="author">Frank Herbert/p>
+                        <p class="type">Sci-fiction</p>
+                        <p id="price">Price: 79$</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem!</p>
+                    </div>
+                </div>
+            </section>
+            <button id="showMore" onclick="hideShow()">Show More</button>
+        </div>     
+    </main>
+    
+    <!-- Search by Categories -->
+    <section id="categories" class="categ">
+        <div class="inCateg">
+            <h2 class="heading">Find books by Categories!</h2>
+            <div class="hr"></div>
+
+            <div class="categories">
+                <div class="tog">
+                    <img src="Books/fantasy.jpg" class="demo"></img>
+                    <h3>Fantasy</h3>
+                    <i id="toSlide1Arrow" onclick="showCat('toSlide1')" class="fa-solid fa-angle-down toggleDown"></i>
+                </div>
+                <div id="toSlide1" style="display: none;">
+                    <img onclick="showBook('fantasy', 'The fifth season', 'N.K. Jemisin', 'Fantasy')" src="Books/fantasy.jpg" class="books"></img> 
+                    <img onclick="showBook('wizEarthsea', 'A Wizard of Earthsea', 'Ursula K. Le Guin', 'Fantasy')" src="Books/wizEarthsea.jpg" class="books"></img> 
+                    <img onclick="showBook('circe', 'Circe', 'Madeline Miller', 'Fantasy' )" src="Books/circe.jpg" class="books"></img>
+                    <img onclick="showBook('nameOfWind','The name of the wind', 'Patrick Rothfuss', '')" src="Books/nameOfWind.jpg" class="books"></img>
+                    <img onclick="showBook('lastUnicorn', 'The Last Unicorn', 'Peter S. Beagle', 'Fantasy')" src="Books/lastUnicorn.jpg" class="books"></img>
+                    <img onclick="showBook('wayOfKings', 'The Way of the Kings', 'Brandon Sanderson', 'Fantasy')" src="Books/wayOfKings.jpg" class="books"></img>
+                    <img onclick="showBook('sixOfCrows', 'Six of Crows', 'Leigh Bardugo', 'Fantasy')" src="Books/sixOfCrows.jpg" class="books"></img>
+                    <img onclick="showBook('northernLights', 'Northern Lights', 'Philip pullman', 'Fantasy')" src="Books/northernLights.jpg" class="books"></img>
+                    <img onclick="showBook('dragonFlight', 'Dragonflight', 'Anne McCaffrey', 'Fantasy')" src="Books/dragonFlight.jpg" class="books"></img>
+                    <img onclick="showBook('assasinsApprentice', 'Assassins Apprentice', 'Robin Hobb', 'Fantasy')" src="Books/assasinsApprentice.jpg" class="books"></img>
+                    <img onclick="showBook('nightCircus', 'The Night Circus', 'Erin Morgenstern', 'Fantasy')" src="Books/nightCircus.jpg" class="books"></img> 
+                    <img onclick="showBook('tigana', 'Tigana', 'Guy Gavriel Kay', 'Fantasy')" src="Books/tigana.jpg" class="books"></img> 
+                    <img onclick="showBook('fearDeath', 'Who Fears Death', 'Nnedi Okorafor', 'Fantasy')" src="Books/fearDeath.jpg" class="books"></img> 
+                    <img onclick="showBook('graceKings', 'The Grace of Kings', 'Ken Liu', 'Fantasy')" src="Books/graceKings.jpg" class="books"></img>
+                    <img onclick="showBook('jadeCity', 'Jade City', 'Fonda Lee', 'Fantasy')" src="Books/jadeCity.jpg" class="books"></img>
+                    <img onclick="showBook('poppyWar', 'The Poppy War', 'R. F. Kuang', 'Fantasy')" src="Books/poppyWar.jpg" class="books"></img>
+                    <img onclick="showBook('changeling', 'The Changeling', 'Victor LaValle', 'Fantasy')" src="Books/changeling.jpg" class="books"></img>
+                    <img onclick="showBook('kindred', 'Kindred', 'Octavia E. Butler', 'Fantasy')" src="Books/kindred.jpg" class="books"></img>
+                    <img onclick="showBook('stardust', 'Stardust', 'Neil Gaiman', 'Fantasy')" src="Books/stardust.jpg" class="books"></img>
+                    <img onclick="showBook('goodOmens', 'Good Omens', 'Neil Gaiman', 'Fantasy')" src="Books/goodOmens.jpg" class="books"></img>
+                </div>
+            </div>
+            
+            <div class="categories">
+                <div class="tog">
+                    <img src="Books/mystery.jpg" class="demo"></img>
+                    <h3>Mystery</h3>
+                    <i id="toSlide2Arrow" onclick="showCat('toSlide2')" class="fa-solid fa-angle-down toggleDown"></i>
+                </div>
+                <div id="toSlide2" style="display: none;">
+                    <img onclick="showBook('mystery', 'The silent Patient', 'Alex Michaelides', 'Mystery')" src="Books/mystery.jpg" class="books"></img>
+                    <img onclick="showBook('goneGirl', 'Gone girl', 'Gillian flynn', 'Mystery')" src="Books/goneGirl.jpg" class="books"></img>
+                    <img onclick="showBook('rebecca', 'Rebecca', 'Daphne du maurier', 'Mystery')" src="Books/rebecca.jpg" class="books"></img>
+                    <img onclick="showBook('bigSleep', 'The big sleep', 'Raymond chandler', 'Mystery')" src="Books/bigSleep.jpg" class="books"></img>
+                    <img onclick="showBook('girlOnTheTrain', 'The girl on the train', 'Paula hawkins', 'Mystery')" src="Books/girlOnTheTrain.jpg" class="books"></img>
+                    <img onclick="showBook('inWoods', 'In the woods', 'Tana french', 'Mystery')" src="Books/inWoods.jpg" class="books"></img>
+                    <img onclick="showBook('nameRose', 'The name of the rose', 'Umberto eco', 'Mystery')" src="Books/nameRose.jpg" class="books"></img>
+                    <img onclick="showBook('shutterIsland', 'Shutter island', 'Dennis lehane', 'Mystery')" src="Books/shutterIsland.jpg" class="books"></img>
+                    <img onclick="showBook('maltese', 'Maltese', 'Dashiell Hammett', 'Mystery')" src="Books/maltese.jpg" class="books"></img>
+                    <img onclick="showBook('alienist', 'The alienist', 'Caleb carr', 'Mystery')" src="Books/alienist.jpg" class="books"></img>
+                    <img onclick="showBook('womanInWhite', 'The woman in white', 'Wilkie collins', 'Mystery')" src="Books/womanInWhite.jpg" class="books"></img>
+                    <img onclick="showBook('angelsDemons', 'Angels and demons', 'Dan brown', 'Mystery')" src="Books/angelsDemons.jpg" class="books"></img>
+                    <img onclick="showBook('blueBird', 'Bluebird, Bluebird', 'Attica locke', 'Mystery')" src="Books/blueBird.jpg" class="books"></img>
+                    <img onclick="showBook('secretHistory', 'The secret history', 'Donna tartt', 'Mystery')" src="Books/secretHistory.jpg" class="books"></img>
+                    <img onclick="showBook('coldBlood', 'In Cold blood', 'Truman capote', 'Mystery')" src="Books/coldBlood.jpg" class="books"></img>
+                    <img onclick="showBook('oneIsLying', 'One of us is lying', 'Karen M.MacManus', 'Mystery')" src="Books/oneIsLying.jpg" class="books"></img>
+                    <img onclick="showBook('crawdadsSing', 'Where the crawdads sing', 'Delia owens', 'Mystery')" src="Books/crawdadsSing.jpg" class="books"></img>
+                    <img onclick="showBook('caseHistories', 'Case histories', 'Kate atkinson', 'Mystery')" src="Books/caseHistories.jpg" class="books"></img>
+                    <img onclick="showBook('killingFloor', 'Killing floor', 'Lee child', 'Mystery')" src="Books/killingFloor.jpg" class="books"></img>
+                    <img onclick="showBook('theDry', 'The dry', 'Jane harper', 'Mystery')" src="Books/theDry.jpg" class="books"></img>
+                </div>
+            </div>
+
+            <div class="categories">
+                <div class="tog">
+                    <img src="Books/fiction.jpg" class="demo"></img>
+                    <h3>Fiction</h3>
+                    <i id="toSlide3Arrow" onclick="showCat('toSlide3')" class="fa-solid fa-angle-down toggleDown"></i>
+                </div>
+                <div id="toSlide3" style="display: none;">
+                    <img onclick="showBook('fiction', 'To Kill a Mockingbird', 'Harper Lee', 'Fiction')" src="Books/fiction.jpg" class="books"></img>
+                    <img onclick="showBook('freeStars', 'We free the stars', 'Hafsah Faizal', 'Fiction')" src="Books/freeStars.jpg" class="books"></img>
+                    <img onclick="showBook('1984', '1984', 'George Orwell', 'Fiction')" src="Books/1984.jpg" class="books"></img>
+                    <img onclick="showBook('beloved', 'Beloved', 'Toni Morrison', 'Fiction')" src="Books/beloved.jpg" class="books"></img>
+                    <img onclick="showBook('wutheringHeights', 'Wuthering Heights', 'Emily Brontë', 'Fiction')" src="Books/wutheringHeights.jpg" class="books"></img>
+                    <img onclick="showBook('kiteRunner', 'Kite Runner', 'Khaled Hosseini', 'Fiction')" src="Books/kiteRunner.jpg" class="books"></img>
+                    <img onclick="showBook('catch', 'Catch-22', 'Joseph Heller', 'Fiction')" src="Books/catch.jpg" class="books"></img>
+                    <img onclick="showBook('trust', 'Trust', 'Hernan Diaz', 'Fiction')" src="Books/trust.jpg" class="books"></img>
+                    <img onclick="showBook('road', 'The Road', 'Cormac McCarthy', 'Fiction')" src="Books/road.jpg" class="books"></img>
+                    <img onclick="showBook('fallApart', 'Things Fall Apart', 'Chinua Achebe', 'Fiction')" src="Books/fallApart.jpg" class="books"></img>
+                    <img onclick="showBook('warPeace', 'War and Peace', 'Leo Tolstoy', 'Fiction')" src="Books/warPeace.jpg" class="books"></img>
+                    <img onclick="showBook('ulysses', 'Ulysses', 'james joyce', 'Fiction')" src="Books/ulysses.jpg" class="books"></img>
+                    <img onclick="showBook('pridePrejudice', 'Pride and Prejudice', 'Jane Austen', 'Fiction')" src="Books/pridePrejudice.jpg" class="books"></img>
+                    <img onclick="showBook('SignalFires', 'Signal Fires', 'Dani Shapiro', 'Fiction')" src="Books/SignalFires.jpg" class="books"></img>
+                    <img onclick="showBook('dracula', 'Dracula', 'Bram Stoker', 'Fiction')" src="Books/dracula.jpg" class="books"></img>
+                    <img onclick="showBook('donQuixote', 'Don Quixote', 'Miguel de Cervantes', 'Fiction')" src="Books/donQuixote.jpg" class="books"></img>
+                    <img onclick="showBook('youngMungo', 'Young Mungo', 'Douglas Stuart', 'Fiction')" src="Books/youngMungo.jpg" class="books"></img>
+                    <img onclick="showBook('taleTwoCities', 'A Tale of Two Cities', 'Charles Dickens', 'Fiction')" src="Books/taleTwoCities.jpg" class="books"></img>
+                    <img onclick="showBook('Atonement', 'Atonement', 'Ian McEwan', 'Fiction')" src="Books/Atonement.jpg" class="books"></img>
+                    <img onclick="showBook('lesMIserables', 'Les Misérables', 'Victor Hugo', 'Fiction')" src="Books/lesMIserables.jpg" class="books"></img>
+                </div>
+            </div>
+
+            <div class="categories">
+                <div class="tog">
+                    <img src="Books/horror.jpg" class="demo"></img>
+                    <h3>Horror</h3>
+                    <i id="toSlide4Arrow" onclick="showCat('toSlide4')" class="fa-solid fa-angle-down toggleDown"></i>
+                </div>
+                <div id="toSlide4" style="display: none;">
+                    <img onclick="showBook('horror', 'Bird Box', 'Josh Malerman', 'Horror')" src="Books/horror.jpg" class="books"></img>
+                    <img onclick="showBook('Frankenstein', 'Frankenstein', 'Mary Shelley', 'Horror')" src="Books/Frankenstein.jpg" class="books"></img>
+                    <img onclick="showBook('narrativeArthur', 'The Narrative of Arthur Gordon Pym of Nantucket', 'Edgar Allan Poe', 'Horror')" src="Books/narrativeArthur.jpg" class="books"></img>
+                    <img onclick="showBook('GothicTales', 'Gothic Tales', 'Elizabeth Gaskell', 'Horror')" src="Books/GothicTales.jpg" class="books"></img>
+                    <img onclick="showBook('Carmilla', 'Carmilla', 'J. Sheridan Le Fanu', 'Horror')" src="Books/Carmilla.jpg" class="books"></img>
+                    <img onclick="showBook('TurnOfScrew', 'The Turn of the Screw', 'Henry James', 'Horror')" src="Books/TurnOfScrew.jpg" class="books"></img>
+                    <img onclick="showBook('IamLegend', 'I Am Legend', 'Richard Matheson', 'Horror')" src="Books/IamLegend.jpg" class="books"></img>
+                    <img onclick="showBook('BadSeed', 'The Bad Seed', 'William March', 'Horror')" src="Books/BadSeed.jpg" class="books"></img>
+                    <img onclick="showBook('psycho', 'Psycho', 'Robert Bloch', 'Horror')" src="Books/psycho.jpg" class="books"></img>
+                    <img onclick="showBook('RosemaryBaby', 'Rosemary\'s Baby', 'Ira Levin', 'Horror')" src="Books/RosemaryBaby.jpg" class="books"></img>
+                    <img onclick="showBook('HellHouse', 'Hell House', 'Richard Matheso', 'Horror')" src="Books/HellHouse.jpg" class="books"></img>
+                    <img onclick="showBook('Exorcist', 'The Exorcist', 'William Peter Blatty', 'Horror')" src="Books/Exorcist.jpg" class="books"></img>
+                    <img onclick="showBook('Carrie', 'Carrie', 'Stephen King', 'Horror')" src="Books/Carrie.jpg" class="books"></img>
+                    <img onclick="showBook('InterviewVampire', 'Interview with the Vampire', 'Anne Rice', 'Horror')" src="Books/InterviewVampire.jpg" class="books"></img>
+                    <img onclick="showBook('TheShining', 'The Shining', 'Stephen King', 'Horror')" src="Books/TheShining.jpg" class="books"></img>
+                    <img onclick="showBook('bloodyChamber', 'The Bloody Chamber', 'Angela Carter', 'Horror')" src="Books/bloodyChamber.jpg" class="books"></img>
+                    <img onclick="showBook('GhostStory', 'Ghost Story', 'Peter Straub', 'Horror')" src="Books/GhostStory.jpg" class="books"></img>
+                    <img onclick="showBook('Whispers', 'Whispers', 'Dean Koontz', 'Horror')" src="Books/Whispers.jpg" class="books"></img>
+                    <img onclick="showBook('TheMask', 'The Mask', 'Dean Koontz', 'Horror')" src="Books/TheMask.jpg" class="books"></img>
+                    <img onclick="showBook('WomainInBlack', 'The Woman in Black', 'Susan Hill', 'Horror')" src="Books/WomainInBlack.jpg" class="books"></img>
+                </div>
+            </div>
+
+            <div class="categories">
+                <div class="tog">
+                    <img src="Books/janeEyre.jpg" class="demo"></img>
+                    <h3>Romance</h3>
+                    <i id="toSlide5Arrow" onclick="showCat('toSlide5')" class="fa-solid fa-angle-down toggleDown"></i>
+                </div>
+                <div id="toSlide5" style="display: none;">
+                    <img onclick="showBook('janeEyre', 'Jane Eyre', 'Charlotte Brontë', 'Romance')" src="Books/janeEyre.jpg" class="books"></img>
+                    <img onclick="showBook('AnnaKarenina', 'Anna Karenina', 'Leo Tolstoy', 'Romance')" src="Books/AnnaKarenina.jpg" class="books"></img>
+                    <img onclick="showBook('LoveInTime', 'Love in the Time of Cholera', 'Gabriel Garcia Márquez', 'Romance')" src="Books/LoveInTime.jpg" class="books"></img>
+                    <img onclick="showBook('NorthSouth', 'North and South', 'Elizabeth Gaskell', 'Romance')" src="Books/NorthSouth.jpg" class="books"></img>
+                    <img onclick="showBook('Emma', 'Emma', 'Jane Austen', 'Romance')" src="Books/Emma.jpg" class="books"></img>
+                    <img onclick="showBook('SenseSensibility', 'Sense and Sensibility', 'Jane Austen', 'Romance')" src="Books/SenseSensibility.jpg" class="books"></img>
+                    <img onclick="showBook('Maurice', 'Maurice', 'E.M. Forster', 'Romance')" src="Books/Maurice.jpg" class="books"></img>
+                    <img onclick="showBook('PrincessBride', 'The Princess Bride', 'William Goldman', 'Romance')" src="Books/PrincessBride.jpg" class="books"></img>
+                    <img onclick="showBook('TessOfDurbervilles', 'Tess of the D\'Urbervilles', 'Thomas Hardy', 'Romance')" src="Books/TessOfDurbervilles.jpg" class="books"></img>
+                    <img onclick="showBook('RomeoJuliet', 'Romeo and Juliet', 'William Shakespeare', 'Romance')" src="Books/RomeoJuliet.jpg" class="books"></img>
+                    <img onclick="showBook('GoneWithWind', 'Gone with the Wind', 'Margaret Mitchell', 'Romance')" src="Books/GoneWithWind.jpg" class="books"></img>
+                    <img onclick="showBook('thornBirds', 'The Thorn Birds', 'Colleen McCullough', 'Romance')" src="Books/thornBirds.jpg" class="books"></img>
+                    <img onclick="showBook('WalkToRemember', 'A Walk to Remember', 'Nicholas Sparks', 'Romance')" src="Books/WalkToRemember.jpg" class="books"></img>
+                    <img onclick="showBook('indigo', 'Indigo', 'Beverly Jenkins', 'Romance')" src="Books/indigo.jpg" class="books"></img>
+                    <img onclick="showBook('RossPoldark', 'Ross Poldark', 'Winston Graham', 'Romance')" src="Books/RossPoldark.jpg" class="books"></img>
+                    <img onclick="showBook('outlander', 'Outlander', 'Diana Gabaldon', 'Romance')" src="Books/outlander.jpg" class="books"></img>
+                    <img onclick="showBook('longPetal', 'A Long Petal of the Sea', 'Isabel Allende', 'Romance')" src="Books/longPetal.jpg" class="books"></img>
+                    <img onclick="showBook('Birdsong', 'Birdsong', 'Sebastian Faulks', 'Romance')" src="Books/Birdsong.jpg" class="books"></img>
+                    <img onclick="showBook('KatieMetCassidy', 'When Katie Met Cassidy', 'Camille Perri', 'Romance')" src="Books/KatieMetCassidy.jpg" class="books"></img>
+                    <img onclick="showBook('MeBeforeYou', 'Me Before You', 'Jojo Moyes', 'Romance')" src="Books/MeBeforeYou.jpg" class="books"></img>
+                </div>
+            </div>
+
+            <div class="categories">
+                <div class="tog">
+                    <img src="Books/historical.jpg" class="demo"></img>
+                    <h3>Historical</h3>
+                    <i id="toSlide6Arrow" onclick="showCat('toSlide6')" class="fa-solid fa-angle-down toggleDown"></i>
+                </div>
+                <div id="toSlide6" style="display: none;">
+                    <img onclick="showBook('historical', 'Orientalism', 'Edward W. Said', 'Historical')" src="Books/historical.jpg" class="books"></img>
+                    <img onclick="showBook('whatIsHistory', 'What Is History?', 'Edward Hallett Carr', 'Historical')" src="Books/whatIsHistory.jpg" class="books"></img>
+                    <img onclick="showBook('communistManifesto', 'The Communist Manifesto', 'Karl Marx', 'Historical')" src="Books/communistManifesto.jpg" class="books"></img>
+                    <img onclick="showBook('liesTeacherTold', 'Lies My Teacher Told Me', 'James W. Loewen', 'Historical')" src="Books/liesTeacherTold.jpg" class="books"></img>
+                    <img onclick="showBook('democracy', 'Democracy: A Life', 'Paul Cartledge', 'Historical')" src="Books/democracy.jpg" class="books"></img>
+                    <img onclick="showBook('destinyDesrupted', 'Destiny Disrupted: A History of the World Through Islamic Eyes', 'Tamim Ansary', 'Historical')" src="Books/destinyDesrupted.jpg" class="books"></img>
+                    <img onclick="showBook('Salt', 'Salt: A World History', 'Mark Kurlansky', 'Historical')" src="Books/Salt.jpg" class="books"></img>
+                    <img onclick="showBook('shortHistory', 'A Short History of Nearly Everything', 'Bill Bryson', 'Historical')" src="Books/shortHistory.jpg" class="books"></img>
+                    <img onclick="showBook('precolonial', 'Precolonial Black Africa', 'Cheikh Anta Diop', 'Historical')" src="Books/precolonial.jpg" class="books"></img>
+                    <img onclick="showBook('houseOfMedici', 'The House of Medici: Its Rise and Fall', 'Christopher Hibbert', 'Historical')" src="Books/houseOfMedici.jpg" class="books"></img>
+                    <img onclick="showBook('peopleHistoryOfUS', 'A People\'s History of the United States', 'Howard Zinn', 'Historical')" src="Books/peopleHistoryOfUS.jpg" class="books"></img>
+                    <img onclick="showBook('veinsOfLatiAmer', 'Open Veins of Latin America: Five Centuries of the Pillage of a Continent', 'Eduardo Galeano', 'Historical')" src="Books/veinsOfLatiAmer.jpg" class="books"></img>
+                    <img onclick="showBook('tenDays', 'Ten Days That Shook The World', 'John Reed', 'Historical')" src="Books/tenDays.jpg" class="books"></img>
+                    <img onclick="showBook('gunsOfAugust', 'The Guns of August', 'Barbara W. Tuchman', 'Historical')" src="Books/gunsOfAugust.jpg" class="books"></img>
+                    <img onclick="showBook('Leningrad', 'Leningrad', 'Anna Reid', 'Historical')" src="Books/Leningrad.jpg" class="books"></img>
+                    <img onclick="showBook('ageOfExtremes', 'Age of Extremes: 1914-1991', 'Eric Hobsbawm', 'Historical')" src="Books/ageOfExtremes.jpg" class="books"></img>
+                    <img onclick="showBook('nothingEverDies', 'Nothing Ever Dies: Vietnam and the Memory of War', 'Viet Thanh Nguyen', 'Historical')" src="Books/nothingEverDies.jpg" class="books"></img>
+                    <img onclick="showBook('sayNothing', 'Say Nothing', 'Patrick Radden Keefe', 'Historical')" src="Books/sayNothing.jpg" class="books"></img>
+                    <img onclick="showBook('waywardLives', 'Wayward Lives, Beautiful Experiments', 'Saidiya Hartman', 'Historical')" src="Books/waywardLives.jpg" class="books"></img>
+                    <img onclick="showBook('blackAndBritish', 'Black and British: A Forgotten History', 'David Olusoga', 'Historical')" src="Books/blackAndBritish.jpg" class="books"></img>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section id="service" class="serv">
+        <div class="services">
+            <h2 class="heading">Our Services!</h2>
+            <div class="hr"></div>
+
+            <div class="servBox">
+                <img src="images/pic2.jpg" alt="">
+                <div class="servInfoL">
+                    <h3>Normal Membership</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim perferendis tempore, ut dolor illum minima vero veritatis hic? Natus, aliquam voluptas est minima dignissimos placeat quam dolorem corporis hic autem!</p>
+                </div>
+            </div>
+
+            <div class="servBox servBoxR">
+                <div class="servInfo">
+                    <h3>Special Membership</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum cumque quos sapiente maxime qui nostrum, accusantium dolorum reiciendis ut laboriosam eos, vel iusto! Enim fuga, sed perspiciatis possimus officia debitis?</p>
+                </div>
+                <img src="images/pic1.jpg" alt="">
+            </div>
+            
+            <div class="servBox">
+                <img src="images/pic3.jpg" alt="">
+                <div class="servInfoL">
+                    <h3>Premium Membership</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit eos, tenetur autem, impedit, aliquam dolorem numquam inventore beatae quo facilis sapiente. Sunt, inventore consequuntur laboriosam sed expedita eum. Dolore, alias!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Donate to us -->
+    <section id="donate" class="donate"> 
+        <div class="dabba ">
+            <h2 class="heading">Give a helping hand!</h2>
+            <div class="hr"></div>
+
+            <div class="donBox">
+              <div class="optPrices">
+                <button id="1" class="active"  onfocus="price(100, 1)">$100</button>
+                <button id="2" onblur="remPrice(200, 2)" onfocus="price(200, 2), remPrice(100, 1)">$200</button>
+                <button id="5" onblur="remPrice(500, 5)" onfocus="price(500, 5), remPrice(100, 1)">$500</button>
+                <button id="10" onblur="remPrice(1000, 10)" onfocus="price(1000, 10), remPrice(100, 1)">$1000</button>
+                <button id="20" onblur="remPrice(2000, 20)" onfocus="price(2000, 20), remPrice(100, 1)">$2000</button>
+                <button id="50" onblur="remPrice(5000, 50)" onfocus="price(5000, 50), remPrice(100, 1)">$5000</button>
+                <button id="100" onblur="remPrice(1000, 100)" onfocus="price(10000, 100), remPrice(100, 1)" style="margin: 0;">$10000</button>
+              </div>
+
+              <div id="curVal" class="selPrice">
+                $100
+              </div>
+              <div class="text">
+                <i class="fa-solid fa-circle-check check bg-some"></i>
+                <p>The selected amount is donated to FsLibrary <br> and they have all the right to use it according to their concern</p>
+              </div>
+              <div class="enter">
+                <i class="fa fa-lock check"></i>
+                <p>Enter payment Info</p>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact us -->
+    <section id="contact">
+        <div class="contacts dabba">
+            <h2 class="heading">Let's get Connected!</h2>
+            <div class="hr"></div>
+            <section style="z-index: 1;" class="body-font relative">
+                <div class="absolute inset-0 bg-gray-300">
+                  <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+                </div>
+                <div class="container px-5 py-24 mx-auto flex " >
+                  <div class="toBeShade lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+                    <h2 class=" -900 text-lg mb-1 font-medium title-font">Feedback</h2>
+                    <p class="leading-relaxed mb-5  -600">Write what you may to the library</p>
+                    <div class="relative mb-4">
+                      <label for="email" class="leading-7 text-sm  -600">Email</label>
+                      <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 text-base outline-none  -700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <div class="relative mb-4">
+                      <label for="message" class="leading-7 text-sm  -600">Message</label>
+                      <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 h-32 text-base outline-none  -700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                    </div>
+                    <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+                  </div>
+                </div>
+              </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="foot">
+        <div id="foot" class="dabba">
+            <div class="left">
+                <div class="name heading">  FsLibrary
+
+                </div>
+                <div class="hori"></div>
+                <div class="copy">&copy 2023 - Farhaan Shaikh</div>
+            </div>
+            <div class="right">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
