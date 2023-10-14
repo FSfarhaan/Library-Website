@@ -60,7 +60,7 @@
             </div>
             <h3 class="logo">FsLibrary</h3>
             <div class="search">
-                <input placeholder="Search through 2,345 Books" type="text">
+                <input id="input" placeholder="Search through 2,345 Books" type="text" onkeyup="searchFun()">
                 <i class="fa fa-search"></i>
             </div>
             <div class="navbar">
@@ -99,11 +99,11 @@
             </div>
 
             <!-- Ye 8 readily show hoge -->
-            <div class="contents">
+            <div class="contents" id="contents1">
                 <div onclick="showBook('alchemist', 'The Alchemist', 'Paulo Coelho', 'Adventure')" class="box">
                     <img src="Books/alchemist.jpg" class="img"></img>
                     <div class="info">
-                        <h3>The Alchemist</h3>
+                        <h3 id="sds">The Alchemist</h3>
                         <p class="author">Paulo Coelho</p>
                         <p class="type">Adventure</p>
                         <p id="price">Price: 79$</p>
