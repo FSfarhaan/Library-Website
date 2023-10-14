@@ -87,3 +87,29 @@ function showNav() {
     if(toggledNav.className.includes("hidden")) toggledNav.classList.remove("hidden");
     else toggledNav.classList.add("hidden");
 }
+
+
+const searchFun =()=>{
+    const fitler = document.getElementById('input').value.toUpperCase();
+    console.log(fitler);
+    
+    // const searching  = document.getElementById("contents1");
+    // console.log(searching);
+    // const box  = searching.getElementsbyClassName("box");
+    // const info  = document.getElementbyClassName("info");
+    const box = document.querySelectorAll(".box");
+    
+    // console.log(info);
+    for(let i=0; i<box.length; i++){ 
+        const bookName=box[i].getElementsByTagName('h3');
+        if(!bookName[0].innerHTML.toUpperCase().includes(fitler)){
+            console.log(bookName[0].innerHTML);
+            box[i].hidden = true;
+        }else{
+            box[i].hidden = false;
+        }
+    }
+    // const hr = info.querySelector("h3");
+    // console.log(hr);
+
+}
